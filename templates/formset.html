@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Set</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form.as_table }}
+    {% endfor %}
+    <input type="submit" value="Save">
+</form>
+
+</body>
+</html>
